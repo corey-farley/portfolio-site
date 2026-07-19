@@ -18,7 +18,6 @@ markup:
 params:
   author: "Corey Farley"
   description: "Offensive Security Researcher"
-  seoDescription: "Corey Farley's portfolio and blog. Offensive security researcher and penetration tester, sharing write-ups, projects, and insights."
   tagline: "Recent graduate sharing my journey in offensive security."
   heroTitle: ""
 
