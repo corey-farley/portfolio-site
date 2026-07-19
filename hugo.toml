@@ -5,6 +5,8 @@ theme = 'design-1'
 
 [params]
   author = 'Corey Farley'
+  description = 'Offensive Security Researcher'
+  tagline = 'Recent graduate sharing my journey in offensive security.'
 
 [[menu.main]]
   name = 'Home'
