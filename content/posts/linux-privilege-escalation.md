@@ -7,7 +7,7 @@ author: "Corey Farley"
 summary: "A walk-through of the Linux Privilege Escalation room in the Jr Penetration Tester pathway on TryHackMe, covering eight core privilege escalation techniques."
 showToc: true
 cover:
-  image: /img/tryhackme-linux-privilege-escalation/cover.jpg
+  image: /img/linux-privilege-escalation/cover.jpg
 ---
 
 ## Introduction
