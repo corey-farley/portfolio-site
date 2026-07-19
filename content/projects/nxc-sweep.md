@@ -1,7 +1,6 @@
 ---
 date: "2026-05-10"
 title: "nxc-sweep | NetExec Automation"
-categories: ["Projects"]
 author: "Corey Farley"
 summary: "A Bash wrapper for NetExec to quickly validate compromised credentials across SMB, WinRM, RDP, MSSQL, and FTP."
 showToc: true

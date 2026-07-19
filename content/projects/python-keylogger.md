@@ -1,7 +1,6 @@
 ---
 date: 2025-09-21
 title: "Creating a Keylogger in Python"
-categories: ["Projects"]
 author: "Corey Farley"
 summary: "Building and obfuscating a covert Python keylogger, from writing the core logic to packaging it as an executable and running test deployments."
 showToc: true
