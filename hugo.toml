@@ -1,0 +1,27 @@
+baseURL = 'https://coreyfarley.com/'
+languageCode = 'en-us'
+title = 'Corey Farley'
+theme = 'design-1'
+
+[params]
+  author = 'Corey Farley'
+
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 2
+
+[[menu.main]]
+  name = 'Blog'
+  url = '/posts/'
+  weight = 3
+
+[[menu.main]]
+  name = 'Contact'
+  url = '/contact/'
+  weight = 4

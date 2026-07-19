@@ -1,0 +1,140 @@
+{{ define "main" }}
+
+<div class="about-page">
+  <!-- About Header -->
+  <header class="about-header">
+    <div class="about-profile">
+      <div class="about-avatar">
+        <img src="/img/red-assets/headshot.png" alt="Corey Farley" />
+      </div>
+      <div class="about-intro">
+        <span class="about-kicker">// ABOUT</span>
+        <h1 class="about-name">Corey Farley</h1>
+        <p class="about-role">Penetration Tester &amp; Cybersecurity Researcher</p>
+        <div class="about-social-row">
+          <a href="https://github.com/corey-farley" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/corey-farley-b06894278/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.371 4.267 5.455v6.288h-.003ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.114 20.452H3.558V9h3.556v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0Z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://app.hackthebox.com/users/2484357" target="_blank" rel="noopener" aria-label="Hack The Box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.29 7 12 12 20.71 7"></polyline>
+            <line x1="12" y1="22" x2="12" y2="12"></line>
+          </svg>
+          Hack The Box
+        </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bio -->
+  <section class="about-section">
+    <p class="about-bio">I am an offensive security researcher and penetration tester. My methodology is rooted in a simple reality; to properly defend oneself, you must first think like an attacker.
+    <br><br>
+    I specialize in vulnerability research, adversary emulation, and translating complex technical exploits into actionable mitigations. Whether I am hunting for zero-days, writing custom tools, or competing in top-tier CTFs, I am constantly pushing myself to elevate my tradecraft.</p>
+  </section>
+
+  <!-- Info Cards -->
+  <div class="about-grid">
+    <!-- Experience -->
+    <div class="about-card">
+      <h2 class="about-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        Experience
+      </h2>
+      <div class="about-list">
+        <div class="about-list-item">
+          <span class="about-list-primary">Security Consultant</span>
+          <span class="about-list-secondary">Freelance &mdash; Jan. 2026 &ndash; Present</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">Manager</span>
+          <span class="about-list-secondary">Jets Pizza &mdash; May 2022 &ndash; Jan. 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="about-card">
+      <h2 class="about-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        Certifications
+      </h2>
+      <div class="about-list">
+        <div class="about-list-item">
+          <span class="about-list-primary">OSCP+</span>
+          <span class="about-list-secondary">Offensive Security Certified Professional
+          <br> &mdash; Jul. 2026</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">CWES</span>
+          <span class="about-list-secondary">Hack The Box
+          <br> Certified Web Exploitation Specialist
+          <br> &mdash; Apr. 2026</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">SecAI+</span>
+          <span class="about-list-secondary">CompTIA SecAI+
+          <br> &mdash; Mar. 2026</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">CPTS</span>
+          <span class="about-list-secondary">Hack The Box
+          <br> Certified Penetration Testing Specialist
+          <br>&mdash; Jan. 2026</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">CySA+</span>
+          <span class="about-list-secondary">CompTIA CySA+
+          <br> &mdash; Aug. 2025</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">Security+</span>
+          <span class="about-list-secondary">CompTIA Security+
+          <br>&mdash; Jun. 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Focus Areas -->
+    <div class="about-card">
+      <h2 class="about-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        Focus Areas
+      </h2>
+      <div class="about-list">
+        <div class="about-list-item"><span class="about-list-primary">Web app exploitation</span></div>
+        <div class="about-list-item"><span class="about-list-primary">Privilege escalation</span></div>
+        <div class="about-list-item"><span class="about-list-primary">Active Directory attacks</span></div>
+        <div class="about-list-item"><span class="about-list-primary">Offensive security tooling</span></div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="about-card">
+      <h2 class="about-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+        Education
+      </h2>
+      <div class="about-list">
+        <div class="about-list-item">
+          <span class="about-list-primary">B.S. in Cybersecurity</span>
+          <span class="about-list-secondary">Franklin University &mdash; Aug. 2023 &mdash; Aug. 2025</span>
+        </div>
+        <div class="about-list-item">
+          <span class="about-list-primary">Senior Officer of Cybersecurity Club</span>
+          <span class="about-list-secondary">Franklin University &mdash; Jun. 2024 &ndash; Present</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ end }}

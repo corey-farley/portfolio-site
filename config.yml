@@ -1,0 +1,46 @@
+baseURL: "https://coreyfarley.com/"
+languageCode: en-us
+title: "Corey Farley"
+theme: design-1
+
+pagination:
+  pagerSize: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: monokai
+    lineNos: true
+    noClasses: false
+
+params:
+  author: "Corey Farley"
+  description: "Offensive Security Researcher"
+  seoDescription: "Corey Farley's portfolio and blog. Offensive security researcher and penetration tester, sharing write-ups, projects, and insights."
+  tagline: "Recent graduate sharing my journey in offensive security."
+  heroTitle: ""
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: About
+      url: /about/
+      weight: 2
+    - name: Write-ups
+      url: /posts/
+      weight: 3
+    - name: Projects
+      url: /projects/
+      weight: 4  
+    - name: Contact
+      url: /contact/
+      weight: 5
+
+outputs:
+  home:
+    - HTML
+    - RSS

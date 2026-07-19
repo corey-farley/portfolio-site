@@ -1,0 +1,176 @@
+{{ define "main" }}
+<div class="about-page">
+    
+    <div class="about-header">
+        <span class="about-kicker">[COREY-FARLEY:~]$ ./contact.sh</span>
+        <h1 class="about-name">Contact Form</h1>
+        <p class="about-bio" style="margin-top: 1.5rem;">
+            Need to reach me for an engagement, collaboration, or professional inquiry? 
+            <br>
+            Submit the form below and I should respond within 48 hours. I prioritize clear, direct communication.
+        </p>
+    </div>
+
+    <style>
+        .contact-form-wrapper {
+            background: rgba(4, 9, 18, 0.7);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form-wrapper label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-wrapper label svg {
+            color: var(--accent);
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+        }
+
+        .contact-form-wrapper input,
+        .contact-form-wrapper textarea {
+            width: 100%;
+            background: rgba(2, 5, 12, 0.8);
+            border: 1px solid rgba(26, 117, 255, 0.26);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 1rem;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+            outline: none;
+        }
+
+        .contact-form-wrapper input:focus,
+        .contact-form-wrapper textarea:focus {
+            border-color: var(--accent);
+            background: rgba(8, 16, 28, 0.9);
+            box-shadow: 0 0 0 3px rgba(26, 117, 255, 0.15);
+        }
+
+        .contact-form-wrapper input::placeholder,
+        .contact-form-wrapper textarea::placeholder {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .honeypot {
+            display: none !important;
+        }
+
+        .contact-submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            width: 100%;
+            background: linear-gradient(135deg, #1a75ff, #0052cc);
+            color: #010308;
+            box-shadow: 0 0 15px rgba(26, 117, 255, 0.2);
+            margin-top: 1rem;
+        }
+
+        .contact-submit-btn:hover {
+            background: linear-gradient(135deg, #4d94ff, #1a75ff);
+            box-shadow: 0 0 25px rgba(26, 117, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .contact-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .turnstile-wrapper {
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-form-wrapper {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+
+    <div class="contact-form-wrapper">
+        <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+            
+            <div class="contact-form-group">
+                <label for="name">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    NAME
+                </label>
+                <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+            </div>
+            
+            <div class="contact-form-group">
+                <label for="email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    EMAIL ADDRESS
+                </label>
+                <input type="email" id="email" name="_replyto" placeholder="Enter your email address..." required>
+            </div>
+
+            <div class="contact-form-group">
+                <label for="subject">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                    SUBJECT
+                </label>
+                <input type="text" id="subject" name="subject" placeholder="Enter the topic of discussion..." required>
+            </div>
+            
+            <div class="contact-form-group">
+                <label for="message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    MESSAGE
+                </label>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            
+            <!-- Turnstile Widget -->
+            <div class="turnstile-wrapper">
+                <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+            </div>
+            
+            <button type="submit" class="contact-submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                ./contact.sh --send
+            </button>
+        </form>
+    </div>
+
+</div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{{ end }}

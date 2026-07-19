@@ -1,0 +1,112 @@
+{{ define "main" }}
+
+<div class="blog-layout">
+  <!-- Blog Sidebar -->
+  <aside class="blog-sidebar">
+    <div class="blog-sidebar-section">
+      <h3 class="blog-sidebar-title">Categories</h3>
+      {{ range .Site.Taxonomies.categories }}
+        <a href="{{ .Page.Permalink }}" class="category-item">
+          <span>{{ .Page.Title }}</span>
+          <span class="category-count">{{ .Count }}</span>
+        </a>
+      {{ end }}
+    </div>
+
+    <div class="blog-sidebar-section">
+      <h3 class="blog-sidebar-title">Tags</h3>
+      <div class="tag-cloud">
+        {{ range .Site.Taxonomies.tags }}
+          <a href="{{ .Page.Permalink }}" class="tag">{{ .Page.Title }}</a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="blog-sidebar-section">
+      <a href="/index.xml" class="rss-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/></svg>
+        RSS Feed
+      </a>
+    </div>
+  </aside>
+
+  <!-- Blog Main -->
+  <div class="blog-content">
+    <div class="blog-header">
+      <h1 class="blog-title">Write-ups</h1>
+      <p class="blog-description">In-depth research and notes on security technologies, tradecraft, and lab write-ups.</p>
+    </div>
+
+    <div class="blog-filters">
+      <div class="blog-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="blogSearch" placeholder="Search articles..." autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="blog-posts" id="blogPosts">
+      {{ $pages := .Pages }}
+      {{ if eq .Kind "taxonomy" }}
+        {{ $pages = .Pages }}
+      {{ end }}
+
+      {{ range $pages.ByDate.Reverse }}
+      <article class="blog-post-card" data-title="{{ .Title | lower }}" data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}" data-categories="{{ with .Params.categories }}{{ delimit . " " | lower }}{{ end }}">
+        <a href="{{ .Permalink }}" class="blog-post-link">
+          {{ with .Params.cover }}
+            {{ with .image }}
+            <div class="blog-post-cover">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
+            </div>
+            {{ end }}
+          {{ end }}
+          <div class="blog-post-body">
+            <div class="blog-post-meta">
+              {{ with .Params.categories }}
+                {{ range first 1 . }}
+                  <span class="blog-post-category">{{ . }}</span>
+                {{ end }}
+              {{ end }}
+              <span class="blog-post-date">{{ .Date.Format "January 2, 2006" }}</span>
+              <span class="blog-post-readtime">{{ .ReadingTime }} min read</span>
+            </div>
+            <h2 class="blog-post-title">{{ .Title }}</h2>
+            {{ with .Params.summary }}
+              <p class="blog-post-summary">{{ . | truncate 180 }}</p>
+            {{ end }}
+            <div class="blog-post-tags">
+              {{ with .Params.tags }}
+                {{ range first 4 . }}
+                  <span class="tag">{{ . }}</span>
+                {{ end }}
+              {{ end }}
+            </div>
+            <span class="blog-post-readmore">Read More <span>&rarr;</span></span>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var search = document.getElementById('blogSearch');
+  var posts = document.querySelectorAll('.blog-post-card');
+  if (search) {
+    search.addEventListener('input', function() {
+      var q = this.value.toLowerCase();
+      posts.forEach(function(post) {
+        var title = post.getAttribute('data-title') || '';
+        var tags = post.getAttribute('data-tags') || '';
+        var cats = post.getAttribute('data-categories') || '';
+        var match = !q || title.indexOf(q) !== -1 || tags.indexOf(q) !== -1 || cats.indexOf(q) !== -1;
+        post.style.display = match ? '' : 'none';
+      });
+    });
+  }
+})();
+</script>
+
+{{ end }}

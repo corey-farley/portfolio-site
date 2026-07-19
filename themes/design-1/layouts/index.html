@@ -1,0 +1,100 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker">Offensive Security Researcher <span></span></div>
+      <h1 class="hero-name"><span class="hero-prompt">&gt;</span> whoami
+      <br>
+      <span class="hero-title">Corey Farley</span>
+      </h1>
+      <p class="hero-subtitle">{{ .Site.Params.description }}</p>
+      <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+      <div class="hero-cta">
+        <a href="/posts/" class="btn btn-primary">WRITE-UPS <span>&rarr;</span></a>
+        <a href="/about/" class="btn btn-outline">ABOUT ME <span>&rarr;</span></a>
+      </div>
+      <p class="hero-command">
+        <span>┌──(corey㉿kali)-[~]</span><br>
+        <span>└─$ cat quote.txt<br>
+        
+        </span>"The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards - and even then I have my doubts." &mdash; Gene Spafford
+        <br><br>
+        
+        <span>┌──(corey㉿kali)-[~]</span><br>
+        <span>└─$</span> <b></b>
+      </p>
+    </div>
+    <div class="hero-visual">
+      <div class="skull-panel">
+        <div class="scanlines"></div>
+        <div class="grid-pattern"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Posts -->
+<section class="featured-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title"><span class="comment-slash">//</span> RECENT POSTS</h2>
+      <a href="/posts/" class="section-link">View All Posts &rarr;</a>
+    </div>
+    <div class="posts-grid">
+      {{ $posts := where .Site.RegularPages "Section" "posts" }}
+      {{ range first 4 $posts.ByDate.Reverse }}
+      <article class="post-card">
+        <a href="{{ .Permalink }}" class="post-card-link">
+          <div class="post-card-inner">
+            <div class="post-card-meta">
+              {{ with .Params.categories }}
+                {{ range first 1 . }}
+                  <span class="post-card-category">{{ . }}</span>
+                {{ end }}
+              {{ end }}
+            </div>
+            <h3 class="post-card-title">{{ .Title }}</h3>
+            <div class="post-card-footer">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              <span class="post-card-readtime">{{ .ReadingTime }} min</span>
+              <span aria-hidden="true">&rarr;</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Capability Strip -->
+<section class="capability-section">
+  <div class="section-inner">
+    <div class="capability-strip">
+      <div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <strong>Vulnerability Research</strong>
+        <span>Uncovering and responsibly disclosing software flaws such as CVE-2026-27897</span>
+      </div>
+      <div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <strong>Penetration Testing</strong>
+        <span>Comprehensive network and web application assessments to identify and validate critical attack vectors</span>
+      </div>
+      <div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <strong>Technical Reporting</strong>
+        <span>Crafting clear and actionable documentation for stakeholders and sharing technical lab write-ups</span>
+      </div>
+      <div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <strong>Custom Tooling</strong>
+        <span>Writing tailored scripts to streamline offensive operations through automation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
