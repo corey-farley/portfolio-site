@@ -1,8 +1,8 @@
 ---
 date: 2026-07-20
 title: "Extplorer | OffSec"
-categories: ["OffSec"]
-tags: ["OffSec", "penetration testing", "Linux", "eXtplorer"]
+categories: ["Linux Pentesting"]
+tags: ["OffSec", "pentesting", "Linux", "eXtplorer"]
 author: "Corey Farley"
 summary: "A Linux box built around eXtplorer, a PHP file manager. Default creds get a webshell, leaked credentials pivot to a local user, and disk group membership leads straight to root."
 showToc: true
