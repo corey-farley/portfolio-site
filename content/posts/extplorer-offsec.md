@@ -78,7 +78,7 @@ It takes us to a login form for eXtplorer, which is the same name as the machine
 
 ![Logged into eXtplorer as admin](/img/extplorer-offsec/3.png)
 
-## Gaining a Foothold
+## PHP Webshell Foothold
 
 Since eXtplorer lets us create and edit files directly on the server, and it's a PHP application, we can drop a basic PHP webshell straight into the web root. A webshell is just a small script that takes a command from a request parameter and executes it on the underlying OS, giving us code execution through the browser. Let's create a file named `webshell.php` with these contents:
 
@@ -255,7 +255,7 @@ dora@dora:~$ cat local.txt
 
 The `python3 -c 'import pty; pty.spawn("/bin/bash")'` trick gives us a proper interactive bash shell instead of the bare `sh` we'd otherwise be stuck with. User flag captured as dora.
 
-## Privilege Escalation
+## Disk Group Privilege Escalation
 
 Now let's start checking for privesc paths, and since we already have dora's password, sudo rights are the first thing to check:
 

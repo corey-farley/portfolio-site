@@ -2,7 +2,7 @@
 date: 2026-07-06
 title: "Remote | HackTheBox"
 categories: ["Windows Pentesting"]
-tags: ["HackTheBox", "pentesting", "Windows", "Umbraco", "PrintSpoofer"]
+tags: ["HackTheBox", "pentesting", "Windows", "Umbraco"]
 author: "Corey Farley"
 summary: "An easy Windows box running Umbraco CMS. Creds leak from a world-readable NFS share, an authenticated Umbraco exploit gets a foothold, and a Print Spooler abuse gets SYSTEM."
 showToc: true

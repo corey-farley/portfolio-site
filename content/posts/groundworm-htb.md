@@ -2,7 +2,7 @@
 date: 2025-10-20
 title: "GroundWorm | HackTheBox"
 categories: ["DFIR"]
-tags: ["DFIR", "threat hunting", "HackTheBox", "Sherlock", "incident response"]
+tags: ["DFIR", "threat hunting", "HackTheBox", "Sherlock"]
 author: "Corey Farley"
 summary: "A walkthrough of GroundWorm, a hard-rated DFIR Sherlock on HackTheBox, tracing a simulated APT attack from initial access through ransomware deployment using Splunk and API Monitor."
 showToc: true

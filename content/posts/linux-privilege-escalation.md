@@ -1,8 +1,8 @@
 ---
 date: 2025-05-20
 title: "Linux Privilege Escalation | TryHackMe"
-categories: ["privilege escalation"]
-tags: ["privilege escalation", "linux", "TryHackMe", "offensive security"]
+categories: ["Linux Pentesting"]
+tags: ["privilege escalation", "linux", "TryHackMe"]
 author: "Corey Farley"
 summary: "A walk-through of the Linux Privilege Escalation room in the Jr Penetration Tester pathway on TryHackMe, covering eight core privilege escalation techniques."
 showToc: true
@@ -348,4 +348,3 @@ Hopefully now, by the end of this article, you feel more confident with privileg
 
 This was my first time doing a technical write-up on something of this magnitude. It was a fun learning experience for me and I hope you learned something useful from this as well.
 
-If you have any questions or feedback, please leave a comment. I also have links to my LinkedIn and THM in my About section if you'd like to connect.
