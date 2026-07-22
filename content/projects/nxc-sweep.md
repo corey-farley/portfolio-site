@@ -18,6 +18,8 @@ To speed things up, I made **nxc-sweep**: a Bash wrapper that checks each port s
 
 As of writing, it currently has 93 stars and over 100,000 impressions!
 
+> **7/21/26 EDIT:** Now that I've taken and passed the OSCP, I can confirm this helped me IMMENSELY and I was able to fully compromise my AD set in under and hour.
+
 ---
 
 ## Why?

@@ -12,7 +12,7 @@ cover:
 
 The Roundhouse Society is a small heritage-railroad museum, chartered in 1973 and run almost entirely by volunteers. Three operating steam locomotives, a working roundhouse, weekend service April through October, admission $14. A retired signals engineer rewrote the catalog page over a winter, he was proud that the server stayed dumb and the "live feel" of the search box ran entirely in the visitor's browser. The URL, he liked to point out, was the whole state of the page.
 
-Challenge link: [https://dashboard.webverselabs-pro.com/challenges/flag-stop](https://dashboard.webverselabs-pro.com/challenges/flag-stop)
+>  **Challenge link:** [https://dashboard.webverselabs-pro.com/challenges/flag-stop](https://dashboard.webverselabs-pro.com/challenges/flag-stop)
 
 ## Enumeration
 
