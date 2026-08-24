@@ -18,7 +18,7 @@ markup:
 params:
   author: "Corey Farley"
   description: "Offensive Security Researcher"
-  tagline: "Recent graduate sharing my journey in offensive security."
+  tagline: "I'm a recent graduate sharing my write-ups and journey of breaking into offensive security."
   heroTitle: ""
 
 menu:

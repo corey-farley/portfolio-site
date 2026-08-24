@@ -1106,8 +1106,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .about-avatar {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--accent-border);
