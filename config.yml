@@ -20,6 +20,7 @@ params:
   description: "Offensive Security Researcher"
   tagline: "I'm a recent graduate sharing my write-ups and journey of breaking into offensive security."
   heroTitle: ""
+  metaDescription: "Personal portfolio site containing technical pentesting writeups and vulnerability research by Corey Farley."
 
 menu:
   main:
