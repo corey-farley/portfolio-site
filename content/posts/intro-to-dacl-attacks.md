@@ -1,13 +1,13 @@
 ---
 date: 2026-08-21
-title: "DACL Attacks 1 | HTB Academy"
+title: "Intro to DACL Attacks"
 categories: ["Active Directory Pentesting"]
 tags: ["HTB Academy", "Active Directory", "DACL", "Kerberoasting", "DCSync"]
 author: "Corey Farley"
 summary: "My write-up for the skills assessment of HTB Academy's DACL Attacks I module. Starting from a low-priv foothold, we chain a targeted Kerberoast, two separate WriteOwner/GenericAll DACL abuses, a LAPS password read, and a gMSA password read into a full DCSync and domain compromise."
 showToc: true
 cover:
-  image: /img/dacl-attacks-1-htb/cover.jpg
+  image: /img/intro-to-dacl-attacks/cover.jpg
 ---
 
 
@@ -62,7 +62,7 @@ INFO: Done in 00M 12S
 
 With that ingested, I found `carlos` and checked his outbound object control:
 
-![carlos' outbound control](/img/dacl-attacks-1-htb/1.png)
+![carlos' outbound control](/img/intro-to-dacl-attacks/1.png)
 
 He has `GenericWrite` over `mathew`, which is exactly what this module was made to show off. GenericWrite on a user object lets you to modify the SPN of another user, which allows us to perform a targeted Kerberoast against them.
 
@@ -111,7 +111,7 @@ It cracked in a couple seconds against the rockyou wordlist; `mathew:ilovejesus`
 
 Pivoting to mathew's creds in BloodHound shows us the next link in the chain:
 
-![mathew's outbound control in BloodHound](/img/dacl-attacks-1-htb/2.png)
+![mathew's outbound control in BloodHound](/img/intro-to-dacl-attacks/2.png)
 
 `mathew` has `WriteOwner` on the `Network Admins` group, and that group has `ReadLAPSPassword` rights over the `WS01` machine. WriteOwner on a group means I can take ownership of it, and once I own it, I can grant myself whatever rights I want on it. In this case I can give myself `GenericAll` which lets me add myself as a member. Then finally once I'm a member of Network Admins, I inherit the ability to read the LAPS password for the local admin on WS01.
 
@@ -173,7 +173,7 @@ At this point I was really confused on how I was supposed to access the WS01 mac
 └─$ xfreerdp3 /u:Administrator /p:'u7x37@b@[$Rn-]' /v:10.129.205.122:13389 /cert:ignore
 ```
 
-![RDP in as Admin and get the flag](/img/dacl-attacks-1-htb/3.png)
+![RDP in as Admin and get the flag](/img/intro-to-dacl-attacks/3.png)
 
 
 ## Post-Exploitation on WS01
@@ -230,9 +230,9 @@ SID               : S-1-5-21-69916981-3983157826-2554592156-1110
 
 Let's go back to BloodHound and check out jose's outbound control:
 
-![full outbound chain from jose](/img/dacl-attacks-1-htb/4.png)
+![full outbound chain from jose](/img/intro-to-dacl-attacks/4.png)
 
-![jose chain cont.](/img/dacl-attacks-1-htb/5.png)
+![jose chain cont.](/img/intro-to-dacl-attacks/5.png)
 
 Now this is the real meat and potatos of the module.
 
