@@ -51,13 +51,16 @@
       {{ end }}
 
       {{ range $pages.ByDate.Reverse }}
+      {{ $page := . }}
       <article class="blog-post-card" data-title="{{ .Title | lower }}" data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}" data-categories="{{ with .Params.categories }}{{ delimit . " " | lower }}{{ end }}">
         <a href="{{ .Permalink }}" class="blog-post-link">
           {{ with .Params.cover }}
             {{ with .image }}
-            <div class="blog-post-cover">
-              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />
-            </div>
+              {{ with $page.Resources.GetMatch . }}
+              <div class="blog-post-cover">
+                <img src="{{ .RelPermalink }}" alt="{{ $page.Title }}" loading="lazy" />
+              </div>
+              {{ end }}
             {{ end }}
           {{ end }}
           <div class="blog-post-body">

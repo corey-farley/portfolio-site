@@ -1,5 +1,6 @@
 baseURL = 'https://coreyfarley.com/'
 languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = 'Corey Farley'
 theme = 'design-1'
 
@@ -41,3 +42,8 @@ theme = 'design-1'
     style = "monokai"
     lineNos = false
     guessSyntax = false
+
+[sitemap]
+  changeFreq = 'weekly'
+  priority = 0.5
+  filename = 'sitemap.xml'

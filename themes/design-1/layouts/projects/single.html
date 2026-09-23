@@ -22,7 +22,9 @@
     {{ with .image }}
     <div class="post-cover">
       <div class="section-inner">
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+        {{ with $.Resources.GetMatch . }}
+        <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy">
+        {{ end }}
       </div>
     </div>
     {{ end }}
@@ -64,10 +66,11 @@
       <!-- Nav -->
       <nav class="post-nav">
         {{ with .PrevInSection }}
+          {{ $previous := . }}
           <a href="{{ .Permalink }}" class="post-nav-link post-nav-prev">
-            {{ if .Params.cover.image }}
-              <img src="{{ .Params.cover.image }}" alt="{{ .Title }} cover" class="nav-cover-image" loading="lazy">
-            {{ end }}
+            {{ with .Params.cover }}{{ with .image }}{{ with $previous.Resources.GetMatch . }}
+              <img src="{{ .RelPermalink }}" alt="{{ $previous.Title }} cover" class="nav-cover-image" loading="lazy">
+            {{ end }}{{ end }}{{ end }}
             <div class="post-nav-info">
               <span class="post-nav-label">&larr; Previous</span>
               <span class="post-nav-title">{{ .Title }}</span>
@@ -76,10 +79,11 @@
         {{ end }}
         
         {{ with .NextInSection }}
+          {{ $next := . }}
           <a href="{{ .Permalink }}" class="post-nav-link post-nav-next">
-            {{ if .Params.cover.image }}
-              <img src="{{ .Params.cover.image }}" alt="{{ .Title }} cover" class="nav-cover-image" loading="lazy">
-            {{ end }}
+            {{ with .Params.cover }}{{ with .image }}{{ with $next.Resources.GetMatch . }}
+              <img src="{{ .RelPermalink }}" alt="{{ $next.Title }} cover" class="nav-cover-image" loading="lazy">
+            {{ end }}{{ end }}{{ end }}
             <div class="post-nav-info">
               <span class="post-nav-label">Next &rarr;</span>
               <span class="post-nav-title">{{ .Title }}</span>
