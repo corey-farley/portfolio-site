@@ -32,3 +32,12 @@ theme = 'design-1'
   name = 'Contact'
   url = '/contact/'
   weight = 5
+
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    noClasses = true
+    style = "monokai"
+    lineNos = false
+    guessSyntax = false

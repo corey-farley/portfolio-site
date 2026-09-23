@@ -5,7 +5,7 @@
         <img src="/img/assets/mix-viper.png" alt="{{ .Site.Title }}" />
       </div>
       <span class="sidebar-title">{{ .Site.Title }}</span>
-      <span class="sidebar-subtitle"><b style="color: #ffffff;">Penetration Tester</b></span>
+      <span class="sidebar-subtitle"><b>Penetration Tester</b></span>
     </a>
 
     <nav class="sidebar-nav">
@@ -43,12 +43,13 @@
 (function() {
   var toggle = document.getElementById('sidebarToggle');
   var sidebar = document.querySelector('.sidebar');
+  var main = document.querySelector('.site-main');
   if (toggle && sidebar) {
     toggle.addEventListener('click', function() {
       sidebar.classList.toggle('open');
       toggle.classList.toggle('active');
     });
-    document.querySelector('.site-main').addEventListener('click', function() {
+    if (main) main.addEventListener('click', function() {
       sidebar.classList.remove('open');
       toggle.classList.remove('active');
     });
