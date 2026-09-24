@@ -19,5 +19,5 @@ The engagement covered a mix of external web app testing and local privilege esc
 
 ## Report
 
-{{< pdf src="https://coreyfarley.com/files/BHIS_Pentest_Report.pdf" >}}
+{{< pdf src="https://coreyfarley.com/projects/bhis-report/BHIS_Pentest_Report.pdf" >}}
 
