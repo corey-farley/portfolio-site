@@ -14,7 +14,7 @@ This report is a sample of my technical writing and reporting process, built fro
 
 The engagement was 5 days long and it was a much more comprehensive network than most technical interviews or HTB labs I've seen. I wasn't given any starting creds, info about the network and subnets, or details about the different Active Directory domains. 
 
-For the report, I used a custom Sysreptor template that I created and got very positive feedback. I ended up getting an offer for the role that I applied for, and start soon!  
+I used a custom Sysreptor template for the report and got very positive feedback from the hiring team. I ended up getting an offer and my first test went smooth!  
 
 
 ## Report
