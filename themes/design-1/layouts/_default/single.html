@@ -91,7 +91,8 @@
             {{ end }}{{ end }}{{ end }}
             <div class="post-nav-info">
               <span class="post-nav-label">&larr; Previous</span>
-              <span class="post-nav-title">{{ .Title }}</span>
+              <span class="post-nav-title">{{ $previous.Title }}</span>
+              <span class="post-nav-summary">{{ default $previous.Summary $previous.Description | plainify | truncate 135 }}</span>
             </div>
           </a>
         {{ end }}
@@ -104,7 +105,8 @@
             {{ end }}{{ end }}{{ end }}
             <div class="post-nav-info">
               <span class="post-nav-label">Next &rarr;</span>
-              <span class="post-nav-title">{{ .Title }}</span>
+              <span class="post-nav-title">{{ $next.Title }}</span>
+              <span class="post-nav-summary">{{ default $next.Summary $next.Description | plainify | truncate 135 }}</span>
             </div>
           </a>
         {{ end }}
@@ -125,5 +127,3 @@
 </script>
 
 {{ end }}
-
-

@@ -4,7 +4,6 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-kicker">Penetration Tester<span></span></div>
       <h1 class="hero-name"><span class="hero-title">Corey<br>Farley</span></h1>
       <p class="hero-subtitle">{{ .Site.Params.description }}</p>
       <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
@@ -37,6 +36,7 @@
     <div class="posts-grid">
       {{ $posts := where .Site.RegularPages "Section" "posts" }}
       {{ range first 4 $posts.ByDate.Reverse }}
+      {{ $page := . }}
       <article class="post-card">
         <a href="{{ .Permalink }}" class="post-card-link">
           <div class="post-card-inner">
@@ -48,6 +48,13 @@
               {{ end }}
             </div>
             <h3 class="post-card-title">{{ .Title }}</h3>
+            {{ with .Params.cover }}
+              {{ with .image }}
+                {{ with $page.Resources.GetMatch . }}
+                  <img class="post-card-image" src="{{ .RelPermalink }}" alt="{{ $page.Title }}" loading="lazy" />
+                {{ end }}
+              {{ end }}
+            {{ end }}
             <div class="post-card-footer">
               <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
               <span class="post-card-readtime">{{ .ReadingTime }} min</span>
