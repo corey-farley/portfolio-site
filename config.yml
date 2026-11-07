@@ -17,8 +17,8 @@ markup:
 
 params:
   author: "Corey Farley"
-  description: "Offensive Security Researcher"
-  tagline: "I'm a recent graduate sharing my write-ups and journey of breaking into offensive security."
+  description: "Associate Penetration Tester"
+  tagline: "I'm an early career professional sharing my write-ups, research, and notable projects."
   heroTitle: ""
   metaDescription: "Personal portfolio site containing technical pentesting writeups and vulnerability research by Corey Farley."
 

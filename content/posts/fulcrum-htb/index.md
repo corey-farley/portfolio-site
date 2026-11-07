@@ -1,8 +1,8 @@
 ---
 date: 2026-11-03
 title: "WIP - Fulcrum | HackTheBox - WIP"
-categories: ["Web Pentesting", "Active Directory Pentesting"]
-tags: ["HackTheBox", "LFI", "SSRF", "API", "File Upload", "PowerShell"]
+categories: ["Web App Pentesting", "Active Directory Pentesting"]
+tags: ["HackTheBox", "LFI", "SSRF", "API", "File Upload"]
 author: "Corey Farley"
 summary: ""
 showToc: true

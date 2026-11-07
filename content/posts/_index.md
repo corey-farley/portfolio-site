@@ -1,4 +1,4 @@
 ---
 title: "Write-ups"
-description: "Research notes, security walkthroughs, and technical write-ups."
+description: "Technical write-ups, security walkthroughs, and research."
 ---
